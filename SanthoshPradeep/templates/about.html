@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}About Me - {{ student.name }}{% endblock %}
+
+{% block content %}
+<section class="about-section">
+    <div class="container">
+        <h1 class="page-title">About Me</h1>
+        
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Hi there! I'm {{ student.name }}</h2>
+                <p>
+                    I'm a dedicated computer science student currently enrolled at 
+                    <strong>{{ student.college }}</strong>, pursuing my engineering degree from 
+                    {{ student.academic_period }}. My journey in technology began with a curiosity 
+                    about how things work, and it has evolved into a passion for creating meaningful 
+                    solutions through code.
+                </p>
+                
+                <h3>My Journey</h3>
+                <p>
+                    Throughout my academic career, I've been exploring various domains of computer 
+                    science, from web development to algorithms and data structures. Each project 
+                    I work on teaches me something new and helps me grow as a developer and problem-solver.
+                </p>
+                
+                <h3>Interests & Hobbies</h3>
+                <ul class="interests-list">
+                    <li><i class="fas fa-code"></i> Software Development</li>
+                    <li><i class="fas fa-laptop-code"></i> Web Development</li>
+                    <li><i class="fas fa-brain"></i> Problem Solving</li>
+                    <li><i class="fas fa-book"></i> Continuous Learning</li>
+                    <li><i class="fas fa-users"></i> Collaborative Projects</li>
+                </ul>
+                
+                <h3>Academic Goals</h3>
+                <p>
+                    My goal is to excel academically while building a strong foundation in software 
+                    engineering. I aim to work on projects that make a difference and continue learning 
+                    new technologies and methodologies that will help me become a better developer.
+                </p>
+            </div>
+            
+            <div class="about-stats">
+                <div class="stat-card">
+                    <h3>{{ student.academic_period.split('-')[1]|int - student.academic_period.split('-')[0]|int }}</h3>
+                    <p>Years of Studies</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Student</h3>
+                    <p>Status</p>
+                </div>
+                <div class="stat-card">
+                    <h3>{{ student.college }}</h3>
+                    <p>Institution</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="education-timeline">
+            <h2>Education</h2>
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h3>Bachelor of Engineering in Artificial Intelligence and Data Science</h3>
+                    <p class="timeline-location">{{ student.college }}</p>
+                    <p class="timeline-period">{{ student.academic_period }}</p>
+                    <p>Currently pursuing my undergraduate degree with a focus on software engineering, 
+                    algorithms, and modern web technologies.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

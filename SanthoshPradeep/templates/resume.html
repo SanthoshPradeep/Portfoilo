@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block title %}Resume - {{ student.name }}{% endblock %}
+
+{% block content %}
+<section class="resume-section">
+    <div class="container">
+        <div class="resume-header">
+            <h1 class="page-title">{{ student.name }}</h1>
+            <p class="resume-subtitle">Artificial Intelligence and Data Science Student</p>
+            <div class="resume-actions">
+                <button onclick="window.print()" class="btn btn-primary">
+                    <i class="fas fa-print"></i> Print Resume
+                </button>
+                <button onclick="downloadResume()" class="btn btn-secondary">
+                    <i class="fas fa-download"></i> Download PDF
+                </button>
+            </div>
+        </div>
+        
+        <div class="resume-content" id="resumeContent">
+            <div class="resume-section-block">
+                <h2><i class="fas fa-user"></i> Personal Information</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <strong>Name:</strong> {{ student.name }}
+                    </div>
+                    <div class="info-item">
+                        <strong>College:</strong> {{ student.college }}
+                    </div>
+                    <div class="info-item">
+                        <strong>Academic Period:</strong> {{ student.academic_period }}
+                    </div>
+                    <div class="info-item">
+                        <strong>Email:</strong> {{ student.email }}
+                    </div>
+                    <div class="info-item">
+                        <strong>Phone:</strong> {{ student.phone }}
+                    </div>
+                    <div class="info-item">
+                        <strong>Location:</strong> {{ student.location }}
+                    </div>
+                </div>
+            </div>
+            
+            <div class="resume-section-block">
+                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                <div class="education-entry">
+                    <h3>Bachelor of Engineering in Computer Science</h3>
+                    <p class="institution">{{ student.college }}</p>
+                    <p class="period">{{ student.academic_period }} | Expected Graduation: 2027</p>
+                    <p>Currently pursuing undergraduate degree with focus on software engineering, 
+                    algorithms, data structures, and modern web technologies.</p>
+                </div>
+            </div>
+            
+            <div class="resume-section-block">
+                <h2><i class="fas fa-cogs"></i> Technical Skills</h2>
+                <div class="skills-resume">
+                    <div class="skill-group">
+                        <h4>Programming Languages</h4>
+                        <p>{{ skills.programming_languages|join(', ') }}</p>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Web Technologies</h4>
+                        <p>{{ skills.web_technologies|join(', ') }}</p>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Databases</h4>
+                        <p>{{ skills.databases|join(', ') }}</p>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Tools & Technologies</h4>
+                        <p>{{ skills.tools|join(', ') }}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="resume-section-block">
+                <h2><i class="fas fa-code"></i> Projects</h2>
+                {% for project in projects %}
+                <div class="project-entry">
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.description }}</p>
+                    <p class="tech-used"><strong>Technologies:</strong> {{ project.technologies|join(', ') }}</p>
+                    {% if project.github %}
+                    <p><strong>GitHub:</strong> <a href="{{ project.github }}" target="_blank">{{ project.github }}</a></p>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            
+            <div class="resume-section-block">
+                <h2><i class="fas fa-trophy"></i> Additional Information</h2>
+                <ul class="additional-info">
+                    <li>Strong foundation in computer science fundamentals</li>
+                    <li>Passionate about problem-solving and algorithm design</li>
+                    <li>Experience in collaborative software development</li>
+                    <li>Continuous learner with interest in emerging technologies</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function downloadResume() {
+    // In a real application, you would generate a PDF here
+    // For now, this triggers the print dialog
+    window.print();
+}
+</script>
+{% endblock %}
+
