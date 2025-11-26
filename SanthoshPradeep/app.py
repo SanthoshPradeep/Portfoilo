@@ -10,7 +10,7 @@ STUDENT_INFO = {
     'name': 'Santhosh Pradeep G S',
     'academic_period': '2023-2027',
     'college': 'Annapoorana Engineering College, Salem, Tamilnadu-636 106',
-    'email': 'santhoshpradeep2809@example.com',
+    'email': 'santhoshpradeep2809@gmail.com',
     'phone': '+91 93459 29313',
     'location': 'India'
 }
@@ -124,4 +124,5 @@ if __name__ == '__main__':
     # Create uploads directory if it doesn't exist
     os.makedirs('static/images', exist_ok=True)
     app.run(debug=True, host='0.0.0.0', port=5000)
+
 
