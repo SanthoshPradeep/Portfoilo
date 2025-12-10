@@ -19,28 +19,20 @@ STUDENT_INFO = {
 PROJECTS = [
     {
         'id': 1,
-        'title': 'Project 1',
-        'description': 'Description of your first project. Add details about technologies used and what you learned.',
-        'technologies': ['Python', 'Flask', 'HTML/CSS'],
-        'github': 'https://github.com/yourusername/project1',
-        'live': '#'
+        'title': 'Snake Image Classification Model',
+        'description': 'VENOM-3.0 is an AI-powered web app that identifies snake species from user-uploaded images.It provides instant details including the snake's name, venom status, danger level, and essential safety precautions.',
+        'technologies': ['Node.js', 'Tailwind', 'React',],
+        'github': 'https://github.com/SanthoshPradeep/AI-Based-Snake-Image-Classification-for-Wildlife-Safety-Applications',
+        'live': 'ai-based-snake-image-classification.vercel.app'
     },
     {
         'id': 2,
-        'title': 'Project 2',
-        'description': 'Description of your second project. Showcase your skills and achievements.',
-        'technologies': ['JavaScript', 'React', 'Node.js'],
-        'github': 'https://github.com/yourusername/project2',
-        'live': '#'
+        'title': 'HAG-FLE',
+        'description': 'An interactive simulation of the HAG-FLE framework visualizing Dynamic Split-Fed Learning, MIFE encryption, and DAO governance for sustainable edge computing. Features real-time network animation and a Gemini-powered "Eco-Insight" analyst to optimize energy efficiency and privacy trade-offs.',
+        'technologies': ['JavaScript', 'HTML', 'CSS'],
+        'github': 'https://github.com/SanthoshPradeep/HAG_FLE',
+        'live': 'hag-fle.vercel.app'
     },
-    {
-        'id': 3,
-        'title': 'Project 3',
-        'description': 'Description of your third project. Highlight your problem-solving abilities.',
-        'technologies': ['Python', 'Django', 'PostgreSQL'],
-        'github': 'https://github.com/yourusername/project3',
-        'live': '#'
-    }
 ]
 
 # Skills data
@@ -124,5 +116,6 @@ if __name__ == '__main__':
     # Create uploads directory if it doesn't exist
     os.makedirs('static/images', exist_ok=True)
     app.run(debug=True, host='0.0.0.0', port=5000)
+
 
 
