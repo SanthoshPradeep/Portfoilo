@@ -23,7 +23,7 @@ PROJECTS = [
         'description': 'VENOM-3.0 is an AI-powered web app that identifies snake species from user-uploaded images.It provides instant details including the snakes name, venom status, danger level, and essential safety precautions.',
         'technologies': ['Node.js', 'Tailwind', 'React',],
         'github': 'https://github.com/SanthoshPradeep/AI-Based-Snake-Image-Classification-for-Wildlife-Safety-Applications',
-        'live': 'ai-based-snake-image-classification.vercel.app'
+        'live': 'https://ai-based-snake-image-classification.vercel.app'
     },
     {
         'id': 2,
@@ -31,7 +31,7 @@ PROJECTS = [
         'description': 'An interactive simulation of the HAG-FLE framework visualizing Dynamic Split-Fed Learning, MIFE encryption, and DAO governance for sustainable edge computing. Features real-time network animation and a Gemini-powered "Eco-Insight" analyst to optimize energy efficiency and privacy trade-offs.',
         'technologies': ['JavaScript', 'HTML', 'CSS'],
         'github': 'https://github.com/SanthoshPradeep/HAG_FLE',
-        'live': 'hag-fle.vercel.app'
+        'live': 'https://hag-fle.vercel.app'
     },
 ]
 
@@ -116,6 +116,7 @@ if __name__ == '__main__':
     # Create uploads directory if it doesn't exist
     os.makedirs('static/images', exist_ok=True)
     app.run(debug=True, host='0.0.0.0', port=5000)
+
 
 
 
